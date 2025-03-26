@@ -137,6 +137,7 @@ return {
           },
           sorting_strategy = "ascending",
           winblend = 10,
+          file_ignore_patterns = { "node_modules" }
         },
         pickers = {
           find_files = {

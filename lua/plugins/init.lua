@@ -18,7 +18,20 @@ return {
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
-    config = true
+    config = function()
+      require("nvim-autopairs").setup({
+        fast_wrap = {
+          map = '<C-e>',
+          chars = { '{', '[', '(', '"', "'" },
+          pattern = [=[[%'%"%>%]%)%}%,]]=],
+          end_key = '$',
+          keys = '123456789qwertyuiop',
+          check_comma = true,
+          highlight = 'Search',
+          highlight_grey = 'Comment'
+        }
+      })
+    end
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },

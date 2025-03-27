@@ -39,7 +39,7 @@ vim.keymap.set("i", "<leader>s", "<Esc>:w<CR>a", { desc = "Save File", silent = 
 vim.keymap.set("v", "<leader>s", "<Esc>:w<CR>gv", { desc = "Save File", silent = true })
 
 vim.keymap.set("n", "<BS>", ":q<CR>", { desc = "Close a file" })
-vim.keymap.set("n", "<leader>q", ":qa<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>q", ":qa!<CR>", { desc = "Quit!" })
 
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Toggle Explorer" })
 vim.keymap.set("n", "<leader>j", "<cmd>Neotree reveal<cr>", { desc = "Reveal current file in tree" })
@@ -68,6 +68,8 @@ vim.api.nvim_create_autocmd("BufRead", {
     vim.keymap.set("n", "<leader>gb", function() gs.blame_line({ full = true }) end, { desc = "Blame line" })
   end,
 })
+
+vim.keymap.set("n", "<leader>c", vim.lsp.buf.code_action, { desc = "LSP code action." })
 
 
 -- Setup lazy.nvim

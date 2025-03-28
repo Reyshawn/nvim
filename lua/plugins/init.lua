@@ -110,7 +110,7 @@ return {
     config = function()
       require('lualine').setup {
         options = {
-          theme = 'auto', -- or 'auto' for current colorscheme
+          theme = 'auto',
           section_separators = { left = '', right = '' },
           component_separators = { left = '', right = '' },
           icons_enabled = true,
@@ -168,6 +168,10 @@ return {
     "lewis6991/gitsigns.nvim",
     config = function()
       require('gitsigns').setup()
+      vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+      -- vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#a6cb72", bg = "none" })
+      vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#ffdb4f", bg = "none" })
+      vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#dd5e56", bg = "none" })
     end
   },
 
@@ -188,5 +192,10 @@ return {
         desc = "Buffer Local Keymaps (which-key)",
       },
     },
+  },
+
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {},
   }
 }

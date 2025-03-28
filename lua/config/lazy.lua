@@ -34,9 +34,9 @@ vim.opt.softtabstop = 2      -- Makes editing feel like tabs are 2 spaces
 
 vim.opt.fillchars:append({ eob = " " })
 
-vim.keymap.set("n", "<leader>s", ":w<CR>", { desc = "Save File", silent = true })
-vim.keymap.set("i", "<leader>s", "<Esc>:w<CR>a", { desc = "Save File", silent = true })
-vim.keymap.set("v", "<leader>s", "<Esc>:w<CR>gv", { desc = "Save File", silent = true })
+vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save File", silent = true })
+vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a", { desc = "Save File", silent = true })
+vim.keymap.set("v", "<C-s>", "<Esc>:w<CR>gv", { desc = "Save File", silent = true })
 
 vim.keymap.set("n", "<BS>", ":q<CR>", { desc = "Close a file" })
 vim.keymap.set("n", "<leader>q", ":qa!<CR>", { desc = "Quit!" })

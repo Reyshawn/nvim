@@ -15,7 +15,7 @@ return {
 
       -- Step 2: Bridge Mason and LSPConfig
       require("mason-lspconfig").setup({
-        ensure_installed = { "ts_ls", "lua_ls", "cssls" },
+        ensure_installed = { "ts_ls", "lua_ls", "cssls", "rust_analyzer" },
       })
 
       local lspconfig = require("lspconfig")
@@ -39,6 +39,11 @@ return {
 
       -- CSS
       lspconfig.cssls.setup({
+        capabilities = capabilities,
+      })
+
+      -- Rust
+      lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
       })
 
